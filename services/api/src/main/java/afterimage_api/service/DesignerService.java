@@ -18,4 +18,12 @@ public class DesignerService {
     public List<Designer> getAllDesigners() {
         return designers;
     }
+
+    public Designer getDesignerById(Long id) {
+        for (Designer designer : designers) {
+            if (designer.id().equals(id)){
+                return designer;
+            }
+        } return null;
+    }
 }
