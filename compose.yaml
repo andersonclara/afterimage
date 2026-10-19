@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:17
+    container_name: afterimage-db
+    environment:
+      POSTGRES_DB: afterimage
+      POSTGRES_USER: afterimage
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5433:5432"
+    volumes:
+      - afterimage_pgdata:/var/lib/postgresql/data
+
+volumes:
+  afterimage_pgdata:
